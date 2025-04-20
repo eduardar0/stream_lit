@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+import numpy as np
 
 
 #Textos
@@ -22,3 +24,15 @@ pessoas = [
 st.write("## Pessoas", pessoas)
 
 #Exibição de dados
+
+#Principalmente com panda 
+#Instalar Panda 
+#instalar nunpy, ferramenta do python que trabalha com algebra linear e matemática, criando dados e vetores atravez do python  
+
+
+df = pd.DataFrame(
+    np.random.rand(10, 3), #3 é a quatidade de parametros que vão ter as colunas, e 10 as linhas
+    columns= ['Preço', 'Taxa de ocupação', 'Taxa de Inadimplencia']
+
+    
+)
