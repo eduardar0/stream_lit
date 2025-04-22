@@ -29,9 +29,42 @@ st.markdown("<h1 class='titulo'>Relatórios inteligentes IPEA</h1>", unsafe_allo
 
 # Métricas
 col1, col2, col3 = st.columns(3)
-col1.metric("📈 Total de Receitas", "50.8K", "28.4%")
-col2.metric("📉 Total de Despesas", "23.6K", "-12.6%")
-col3.metric("🔔 Alertas Ativos", "3", "3.1%")
+
+with col1:
+    st.markdown("""
+    <div class="card-metrica">
+        <div class="card-topo">
+            <span class="icon">👤</span>
+            <span class="titulo">Total de receitas</span>
+        </div>
+        <div class="valor">50.8K</div>
+        <div class="variacao positivo">▲ 28.4%</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown("""
+    <div class="card-metrica">
+        <div class="card-topo">
+            <span class="icon">👁️</span>
+            <span class="titulo">Total de Despesas</span>
+        </div>
+        <div class="valor">23.6K</div>
+        <div class="variacao negativo">▼ 12.6%</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col3:
+    st.markdown("""
+    <div class="card-metrica">
+        <div class="card-topo">
+            <span class="icon">➕</span>
+            <span class="titulo">Alertas Ativos</span>
+        </div>
+        <div class="valor">3</div>
+        <div class="variacao positivo">▲ 3.1%</div>
+    </div>
+    """, unsafe_allow_html=True)
 
 st.markdown("## ")
 

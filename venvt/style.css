@@ -122,3 +122,72 @@ h1.titulo {
 .css-1kyxreq, .block-container {
     padding: 1rem 2rem;
 }
+
+/* Remove padding/margem que causa a barra branca no topo */
+.css-18ni7ap.e8zbici2 {
+    padding-top: 0rem !important;
+}
+
+/* Remove header invisível que deixa espaço */
+header {
+    visibility: hidden;
+    height: 0px !important;
+    position: absolute;
+    top: 0;
+}
+
+/* Remove também o menu e rodapé */
+#MainMenu, footer {
+    visibility: hidden;
+    height: 0;
+}
+
+.card-metrica {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.card-topo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.icon {
+    font-size: 1.1rem;
+}
+
+.valor {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.variacao {
+    margin-top: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.positivo {
+    background-color: rgba(0, 255, 150, 0.1);
+    color: #00ff94;
+}
+
+.negativo {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff4d4d;
+}
+
+
