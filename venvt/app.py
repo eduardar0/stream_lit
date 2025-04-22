@@ -1,38 +1,69 @@
 import streamlit as st
+import plotly.graph_objects as go
 import pandas as pd
-import numpy as np
+from datetime import datetime
+import random
 
+st.set_page_config(page_title="Dashboard IPEA", layout="wide")
 
-#Textos
-st.header('Minha dashboard')
-st.write("Meu texto com st.write()")
-#se eu quiser criar uma sidebar 
-st.sidebar.text("Escolha o elemento que deseja filtrar")
-#qualquer elemento que quiser colocar na sidebar dem que colocar o .sidebar no st
-st.markdown("# Meu titulo")
-#da pra ultilizar markdown 
+# Estilização externa
+with open("style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-st.caption("Minha legenda")
+# Sidebar
+with st.sidebar:
+    st.title("📊 IPEA")
+    st.text_input("🔍 Search for...")
+    st.markdown("### 📂 Navegação")
+    st.button(" 🟣 Dashboard")
+    st.button("Relatórios")
+    st.button("Alertas")
+    st.button("Análises inteligentes")
+    st.button("Dados")
+    st.markdown("---")
+    st.button("👤 User")
+    st.button("⚙️ Configurações")
 
-#formato de legenda, mais claro 
+# Título
+st.markdown("<h1 class='titulo'>Relatórios inteligentes IPEA</h1>", unsafe_allow_html=True)
 
-pessoas = [
-    {'Nome': 'Eduarda', 'Idade': '19'},
-    {'Nome': 'Rony', 'Idade': '11'}
-]
+# Métricas
+col1, col2, col3 = st.columns(3)
+col1.metric("📈 Total de Receitas", "50.8K", "28.4%")
+col2.metric("📉 Total de Despesas", "23.6K", "-12.6%")
+col3.metric("🔔 Alertas Ativos", "3", "3.1%")
 
-st.write("## Pessoas", pessoas)
+st.markdown("## ")
 
-#Exibição de dados
+# Gráfico e painel lateral
+col4, col5 = st.columns([3, 2])
 
-#Principalmente com panda 
-#Instalar Panda 
-#instalar nunpy, ferramenta do python que trabalha com algebra linear e matemática, criando dados e vetores atravez do python  
+# Gráfico
+df = pd.DataFrame({
+    "Meses": pd.date_range("2023-01-01", periods=12, freq="M"),
+    "Receitas": [random.randint(80, 240) for _ in range(12)],
+    "Despesas": [random.randint(60, 180) for _ in range(12)],
+})
 
-
-df = pd.DataFrame(
-    np.random.rand(10, 3), #3 é a quatidade de parametros que vão ter as colunas, e 10 as linhas
-    columns= ['Preço', 'Taxa de ocupação', 'Taxa de Inadimplencia']
-
-    
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=df["Meses"], y=df["Receitas"], name="Receitas", line=dict(color="#A020F0")))
+fig.add_trace(go.Scatter(x=df["Meses"], y=df["Despesas"], name="Despesas", line=dict(color="#00CFFF")))
+fig.update_layout(
+    margin=dict(l=0, r=0, t=0, b=0),
+    plot_bgcolor="rgba(0,0,0,0)",
+    paper_bgcolor="rgba(0,0,0,0)",
+    font=dict(color="white")
 )
+
+col4.plotly_chart(fig, use_container_width=True)
+
+# Texto lateral e indicador
+with col5:
+    st.markdown(
+        """
+        <div class='painel'>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque urna mi, varius nec tincidunt sed.</p>
+        <h2 class='valor-indicador'>23,648</h2>
+        </div>
+        """, unsafe_allow_html=True
+    )
