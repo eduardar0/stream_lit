@@ -1,161 +1,124 @@
-body {
-    background-color: #0f1021;
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-
-.container {
-    display: flex;
-    height: 100vh;
-}
-
-.sidebar {
-    width: 250px;
-    background-color: #1b1b3a;
-    padding: 20px;
-}
-
-.sidebar h1 {
-    color: #ffffff;
-    font-size: 1.5em;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar li {
-    margin: 15px 0;
-    color: #ccc;
-}
-
-.main {
-    flex: 1;
-    padding: 30px;
-    background-color: #131336;
-}
-
-.main h2 {
-    font-size: 1.8em;
-    margin-bottom: 30px;
-}
-
-.cards {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.card {
-    background-color: #c30bdc;
-    padding: 20px;
-    border-radius: 10px;
-    flex: 1;
-    text-align: center;
-}
-
-.card h3 {
-    margin: 10px 0;
-}
-
-.up {
-    color: #00ff99;
-}
-
-.down {
-    color: #dc5cff;
-}
-
-.dashboard-img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-}
-
-/* Fundo geral da página */
+/* ======== ESTILO GERAL ======== */
 body, .stApp {
-    background-color: #0F1125;
+    background-color: #101432;
+    font-family: 'Segoe UI', sans-serif;
     color: white;
 }
 
-/* Título principal */
-.titulo {
-    font-size: 2rem;
-    margin-top: 20px;
-    margin-bottom: 10px;
+/* ======== SIDEBAR ======== */
+section[data-testid="stSidebar"] {
+    background-color: #1a1f44;
+    padding: 1.5rem 1rem;
+    border-right: 1px solid #2a2f56;
+}
+
+/* Título da sidebar */
+section[data-testid="stSidebar"] h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
     color: white;
+    margin-bottom: 1.5rem;
 }
 
 /* Botões da sidebar */
-.stButton>button {
+button[kind="secondary"], .stButton > button {
     width: 100%;
-    border-radius: 8px;
-    background-color: #1E1E3F;
-    color: white;
+    padding: 0.8rem;
+    margin: 0.3rem 0;
+    background-color: #21254e;
     border: none;
-    transition: 0.2s;
-}
-.stButton>button:hover {
-    background-color: #2C2C54;
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-/* Painel lateral com indicador */
-.painel {
-    background-color: #1A1C3D;
-    padding: 20px;
+button[kind="secondary"]:hover, .stButton > button:hover {
+    background-color: #31376e;
+    color: #d79aff;
+}
+
+/* Caixa de busca */
+input[type="text"], .stTextInput input {
+    background-color: #21254e;
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+/* ======== TÍTULO PRINCIPAL ======== */
+h1, h2 {
+    color: white;
+    font-weight: bold;
+}
+
+h1.titulo {
+    font-size: 2.2rem;
+    padding: 1.2rem 2rem 0.5rem;
+    background-color: transparent;
+    border-bottom: 1px solid #2c2f5c;
+}
+
+/* ======== MÉTRICAS (CARDS) ======== */
+[data-testid="metric-container"] {
+    background-color: #1e234b;
+    padding: 1rem;
     border-radius: 12px;
+    border: 1px solid #2c2f5c;
+    margin-bottom: 1rem;
 }
 
-/* Valor do indicador em destaque */
+[data-testid="metric-container"] h1 {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+[data-testid="stMetricDelta"] {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+}
+
+[data-testid="stMetricDeltaPositive"] {
+    background-color: #153f2e;
+    color: #1fe49d;
+}
+
+[data-testid="stMetricDeltaNegative"] {
+    background-color: #411f1f;
+    color: #ff5c5c;
+}
+
+/* ======== PAINEL DE TEXTO ======== */
+.painel {
+    background-color: #1e234b;
+    border: 1px solid #2c2f5c;
+    padding: 1.2rem;
+    border-radius: 12px;
+    color: white;
+    font-size: 0.95rem;
+}
+
+/* ======== INDICADOR DE VELOCIDADE ======== */
 .valor-indicador {
     font-size: 2.5rem;
-    color: #00CFFF;
+    font-weight: bold;
     text-align: center;
-}
-
-/* Remover fundo branco dos inputs */
-input, .stTextInput>div>div>input {
-    background-color: #1E1E3F;
     color: white;
-    border: none;
+    margin-top: 1rem;
 }
 
-/* Sidebar (opcional para escurecer) */
-section[data-testid="stSidebar"] {
-    background-color: #1A1C3D;
-}
-
-/* Cabeçalhos dos gráficos e métricas */
-h1, h2, h3, h4 {
-    color: white;
-}
-h1.titulo {
-    font-size: 2.5rem;
-    color: white;
-    margin-top: 0;
-    padding: 1.5rem 2rem;
-    background-color: #0f1021;
-    border-bottom: 1px solid #2c2c2c;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-[data-testid="metric-container"] {
-    border: 1px solid white;
-    border-radius: 10px;
+/* ======== GRAFICO LINHAS ======== */
+.stPlotlyChart {
+    background-color: #1e234b;
     padding: 1rem;
-    background-color: #181a2f;
+    border-radius: 12px;
+    border: 1px solid #2c2f5c;
 }
 
-section[data-testid="stSidebar"] {
-    background-color: #1b1c34;
+/* Remove espaço extra entre elementos */
+.css-1kyxreq, .block-container {
+    padding: 1rem 2rem;
 }
-
-input[type="text"] {
-    background-color: #282a3c;
-    color: white;
-}
-
