@@ -1,55 +1,61 @@
 /* ======== ESTILO GERAL ======== */
 body, .stApp {
-    background-color: #101432;
+    background-color: #323232; /*cor do fundo*/
     font-family: 'Segoe UI', sans-serif;
-    color: white;
+    color: rgb(26, 26, 26); /*tetxo do tipulo*/
 }
 
 /* ======== SIDEBAR ======== */
 section[data-testid="stSidebar"] {
-    background-color: #1a1f44;
+    background-color: #383737;
     padding: 1.5rem 1rem;
-    border-right: 1px solid #2a2f56;
+    border-right: 1px solid #585858;
 }
 
 /* Título da sidebar */
 section[data-testid="stSidebar"] h1 {
     font-size: 1.5rem;
     font-weight: bold;
-    color: white;
-    margin-bottom: 1.5rem;
+    color: #BDBDBD; /* cor do texto do sidebar */
+    margin-bottom: 2rem;
+    margin-top: -40px;
+    text-align: center; 
 }
+
+
 
 /* Botões da sidebar */
 button[kind="secondary"], .stButton > button {
     width: 100%;
     padding: 0.8rem;
     margin: 0.3rem 0;
-    background-color: #21254e;
+    background-color: #1d1d1d; /*cor dos botões*/
     border: none;
     border-radius: 10px;
-    color: white;
+    color: rgb(167, 167, 167); /*escrita dos bottões*/
     font-weight: 500;
     transition: 0.3s;
 }
 
+
+/*hover botões*/
 button[kind="secondary"]:hover, .stButton > button:hover {
-    background-color: #31376e;
-    color: #d79aff;
+    background-color: #727272;
+    color: #0e0d0d;
 }
 
 /* Caixa de busca */
 input[type="text"], .stTextInput input {
-    background-color: #21254e;
+    background-color: #727272;
     border: none;
-    color: white;
+    color: rgb(25, 24, 24);
     padding: 0.5rem;
     border-radius: 8px;
 }
 
 /* ======== TÍTULO PRINCIPAL ======== */
 h1, h2 {
-    color: white;
+    color: rgb(107, 107, 107);
     font-weight: bold;
 }
 
@@ -57,15 +63,15 @@ h1.titulo {
     font-size: 2.2rem;
     padding: 1.2rem 2rem 0.5rem;
     background-color: transparent;
-    border-bottom: 1px solid #2c2f5c;
+    border-bottom: 1px solid #4a4a4a;
 }
 
 /* ======== MÉTRICAS (CARDS) ======== */
 [data-testid="metric-container"] {
-    background-color: #1e234b;
+    background-color: #ffffff;
     padding: 1rem;
     border-radius: 12px;
-    border: 1px solid #2c2f5c;
+    border: 1px solid #505050;
     margin-bottom: 1rem;
 }
 
@@ -82,22 +88,22 @@ h1.titulo {
 }
 
 [data-testid="stMetricDeltaPositive"] {
-    background-color: #153f2e;
-    color: #1fe49d;
+    background-color: #5e5e5e;
+    color: #585858;
 }
 
 [data-testid="stMetricDeltaNegative"] {
-    background-color: #411f1f;
-    color: #ff5c5c;
+    background-color: #898989;
+    color: #757575;
 }
 
 /* ======== PAINEL DE TEXTO ======== */
 .painel {
-    background-color: #1e234b;
-    border: 1px solid #2c2f5c;
+    background-color: #292929;
+    border: 1px solid #606060;
     padding: 1.2rem;
     border-radius: 12px;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 0.95rem;
 }
 
@@ -106,16 +112,16 @@ h1.titulo {
     font-size: 2.5rem;
     font-weight: bold;
     text-align: center;
-    color: white;
+    color: rgb(92, 92, 92);
     margin-top: 1rem;
 }
 
 /* ======== GRAFICO LINHAS ======== */
 .stPlotlyChart {
-    background-color: #1e234b;
+    background-color: #292929;
     padding: 1rem;
     border-radius: 12px;
-    border: 1px solid #2c2f5c;
+    border: 1px solid #757577;
 }
 
 /* Remove espaço extra entre elementos */
@@ -133,18 +139,14 @@ header {
     visibility: hidden;
     height: 0px !important;
     position: absolute;
-    top: 0;
+    top: 50px;
 }
 
-/* Remove também o menu e rodapé */
-#MainMenu, footer {
-    visibility: hidden;
-    height: 0;
-}
+
 
 .card-metrica {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(126, 124, 124, 0.957);
     border-radius: 12px;
     padding: 15px 20px;
     margin-bottom: 10px;
@@ -182,12 +184,34 @@ header {
 
 .positivo {
     background-color: rgba(0, 255, 150, 0.1);
-    color: #00ff94;
+    color: #8c8e8d;
 }
 
-.negativo {
-    background-color: rgba(255, 0, 0, 0.1);
-    color: #ff4d4d;
+/* HEADER ESTILIZADO (como na segunda imagem) */
+.header-ipea {
+    background-color: #4e4e4e;
+    padding: 1.5rem;
+    margin: -1rem -1rem 2rem -1rem;
+    border-bottom: 1px solid #474646;
+}
+.titulo-ipea {
+    color: #003366;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+.subtitulo-ipea {
+    color: #666;
+    font-size: 1rem;
+    margin-top: 0.5rem;
 }
 
+/* Restante do seu CSS existente */
+.card-metrica {
+    background: #212121;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
 

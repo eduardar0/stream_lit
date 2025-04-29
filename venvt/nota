@@ -1,0 +1,347 @@
+/* ======== ESTILO GERAL ======== */
+body, .stApp {
+    background-color: #101432;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+}
+
+/* ======== SIDEBAR ======== */
+section[data-testid="stSidebar"] {
+    background-color: #1a1f44;
+    padding: 1.5rem 1rem;
+    border-right: 1px solid #2a2f56;
+}
+
+/* Título da sidebar */
+section[data-testid="stSidebar"] h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(121, 120, 120);
+    margin-bottom: 1.5rem;
+}
+
+/* Botões da sidebar */
+button[kind="secondary"], .stButton > button {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.3rem 0;
+    background-color: #303030;
+    border: none;
+    border-radius: 10px;
+    color: rgb(188, 188, 188);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+button[kind="secondary"]:hover, .stButton > button:hover {
+    background-color: #31376e;
+    color: #d79aff;
+}
+
+/* Caixa de busca */
+input[type="text"], .stTextInput input {
+    background-color: #21254e;
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+/* ======== TÍTULO PRINCIPAL ======== */
+h1, h2 {
+    color: white;
+    font-weight: bold;
+}
+
+h1.titulo {
+    font-size: 2.2rem;
+    padding: 1.2rem 2rem 0.5rem;
+    background-color: transparent;
+    border-bottom: 1px solid #2c2f5c;
+}
+
+/* ======== MÉTRICAS (CARDS) ======== */
+[data-testid="metric-container"] {
+    background-color: #1e234b;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #2c2f5c;
+    margin-bottom: 1rem;
+}
+
+[data-testid="metric-container"] h1 {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+[data-testid="stMetricDelta"] {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+}
+
+[data-testid="stMetricDeltaPositive"] {
+    background-color: #153f2e;
+    color: #1fe49d;
+}
+
+[data-testid="stMetricDeltaNegative"] {
+    background-color: #411f1f;
+    color: #ff5c5c;
+}
+
+/* ======== PAINEL DE TEXTO ======== */
+.painel {
+    background-color: #1e234b;
+    border: 1px solid #2c2f5c;
+    padding: 1.2rem;
+    border-radius: 12px;
+    color: white;
+    font-size: 0.95rem;
+}
+
+/* ======== INDICADOR DE VELOCIDADE ======== */
+.valor-indicador {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    margin-top: 1rem;
+}
+
+/* ======== GRAFICO LINHAS ======== */
+.stPlotlyChart {
+    background-color: #1e234b;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #2c2f5c;
+}
+
+/* Remove espaço extra entre elementos */
+.css-1kyxreq, .block-container {
+    padding: 1rem 2rem;
+}
+
+/* Remove padding/margem que causa a barra branca no topo */
+.css-18ni7ap.e8zbici2 {
+    padding-top: 0rem !important;
+}
+
+/* Remove header invisível que deixa espaço */
+header {
+    visibility: hidden;
+    height: 0px !important;
+    position: absolute;
+    top: 0;
+}
+
+/* Remove também o menu e rodapé */
+#MainMenu, footer {
+    visibility: hidden;
+    height: 0;
+}
+
+.card-metrica {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.card-topo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.icon {
+    font-size: 1.1rem;
+}
+
+.valor {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.variacao {
+    margin-top: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.positivo {
+    background-color: rgba(0, 255, 150, 0.1);
+    color: #00ff94;
+}
+
+.negativo {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff4d4d;
+}
+
+
+section[data-testid="stSidebar"] {
+    background-color: #1b1c34;
+    padding-top: 1rem !important;
+}
+
+/* Logo + Título IPEA no topo */
+section[data-testid="stSidebar"] > div:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+section[data-testid="stSidebar"] h1, 
+section[data-testid="stSidebar"] .st-emotion-cache-6qob1r {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Input de busca - cor do placeholder branca */
+input[type="text"]::placeholder {
+    color: white;
+    opacity: 0.7;
+}
+
+/* Corrigir campo de busca */
+input[type="text"] {
+    background-color: #282a3c;
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+/* Botões da sidebar com espaçamento e cor mais escura */
+button {
+    background-color: #121322;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    text-align: left;
+}
+
+button:hover {
+    background-color: #27293d;
+    color: #a020f0;
+}
+
+
+
+
+import streamlit as st
+import plotly.graph_objects as go
+import pandas as pd
+from datetime import datetime
+import random
+
+st.set_page_config(page_title="Dashboard IPEA", layout="wide")
+
+# Estilização externa
+with open("style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+# Sidebar
+with st.sidebar:
+    st.title("📊 IPEA")
+    st.text_input("🔍 Search for...")
+    st.markdown("### 📂 Navegação")
+    st.button(" 🟣 Dashboard")
+    st.button("Relatórios")
+    st.button("Alertas")
+    st.button("Análises inteligentes")
+    st.button("Dados")
+    st.markdown("---")
+    st.button("👤 User")
+    st.button("⚙️ Configurações")
+
+# Título 
+st.markdown("<h1 class='titulo'>Relatórios inteligentes IPEA</h1>", unsafe_allow_html=True)
+
+# Métricas
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.markdown("""
+    <div class="card-metrica">
+        <div class="card-topo">
+            <span class="icon">👤</span>
+            <span class="titulo">Total de receitas</span>
+        </div>
+        <div class="valor">50.8K</div>
+        <div class="variacao positivo">▲ 28.4%</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown("""
+    <div class="card-metrica">
+        <div class="card-topo">
+            <span class="icon">👁️</span>
+            <span class="titulo">Total de Despesas</span>
+        </div>
+        <div class="valor">23.6K</div>
+        <div class="variacao negativo">▼ 12.6%</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col3:
+    st.markdown("""
+    <div class="card-metrica">
+        <div class="card-topo">
+            <span class="icon">➕</span>
+            <span class="titulo">Alertas Ativos</span>
+        </div>
+        <div class="valor">3</div>
+        <div class="variacao positivo">▲ 3.1%</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.markdown("## ")
+
+# Gráfico e painel lateral
+col4, col5 = st.columns([3, 2])
+
+# Gráfico
+df = pd.DataFrame({
+    "Meses": pd.date_range("2023-01-01", periods=12, freq="M"),
+    "Receitas": [random.randint(80, 240) for _ in range(12)],
+    "Despesas": [random.randint(60, 180) for _ in range(12)],
+})
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=df["Meses"], y=df["Receitas"], name="Receitas", line=dict(color="#A020F0")))
+fig.add_trace(go.Scatter(x=df["Meses"], y=df["Despesas"], name="Despesas", line=dict(color="#00CFFF")))
+fig.update_layout(
+    margin=dict(l=0, r=0, t=0, b=0),
+    plot_bgcolor="rgba(0,0,0,0)",
+    paper_bgcolor="rgba(0,0,0,0)",
+    font=dict(color="white")
+)
+
+col4.plotly_chart(fig, use_container_width=True)
+
+# Texto lateral e indicador
+with col5:
+    st.markdown(
+        """
+        <div class='painel'>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque urna mi, varius nec tincidunt sed.</p>
+        <h2 class='valor-indicador'>23,648</h2>
+        </div>
+        """, unsafe_allow_html=True
+    )
