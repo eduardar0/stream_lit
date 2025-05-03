@@ -8,6 +8,12 @@ import requests
 
 st.set_page_config(page_title="Dashboard IPEA", layout="wide")
 
+
+if "pagina" not in st.session_state:
+    st.session_state.pagina = "dashboard"
+
+
+
 # Funções para integrações futuras
 def get_total_receitas():
     # TODO: Substituir por integração 
@@ -37,7 +43,7 @@ def get_gauge_value():
     return 65
 
 # Estilização CSS
-with open("style.css") as f:
+with open("./src/interface/views/styles/style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # Sidebar
@@ -45,8 +51,12 @@ with st.sidebar:
     st.title("IPEA")
     st.text_input("🔍 Search for...")
     st.markdown("### Navegação")
-    st.button("Dashboard")
-    st.button("Relatórios")
+
+    if st.button("Dashboard"):
+        st.session_state.pagina = "dashboard"
+    if st.button("Relatórios"):
+        st.session_state.pagina = "relatorios"
+
     st.button("Alertas")
     st.button("Análises inteligentes")
     st.button("Dados")
@@ -175,3 +185,4 @@ with col5:
     st.plotly_chart(gauge_fig, use_container_width=True)
 
     st.markdown("</div>", unsafe_allow_html=True)
+
